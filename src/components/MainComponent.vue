@@ -1,17 +1,20 @@
 <template>
     <main>
         <div class="container">
-            <CardList />PROVA
+            <CounterComponent />
+            <CardList />
         </div>
     </main>
 </template>
 
 <script>
 import {store} from '../store.js';
+import CounterComponent from './CounterComponent.vue';
 import CardList from './CardList.vue';
     export default {
         name: 'MainComponent',
         components: {
+            CounterComponent,
             CardList,
         },
         data() {
