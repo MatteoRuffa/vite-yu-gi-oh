@@ -34,7 +34,7 @@
         overflow: hidden;
         line-height: 1.2; 
         height: 2.4em; 
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-weight: 500;
     }
     .card-title span {
