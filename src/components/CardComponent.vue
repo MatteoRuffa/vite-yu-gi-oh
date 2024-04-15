@@ -19,7 +19,7 @@
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
 .card-body {
-    background: linear-gradient(to right, #D48F38, darken(#D48F38, 20%));
+    background: linear-gradient(to right, #D48F38, transparent);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 

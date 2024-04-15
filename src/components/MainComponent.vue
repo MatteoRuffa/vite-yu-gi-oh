@@ -28,7 +28,7 @@ import CardList from './CardList.vue';
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
 main {
-    background-image: url('/public/images/cartas-de-yu-gi-oh-2362147036.jpg');
+    background-image: url('/public/images/OIG2.jpg');
     background-repeat: repeat;
     background-size: contain;
     padding: 30px;
