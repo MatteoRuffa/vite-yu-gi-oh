@@ -26,7 +26,7 @@ import MainComponent from './components/MainComponent.vue';
             id: card.id,
             image: card.card_images[0].image_url,
             name: card.name,
-            archetype: card.archetype
+            archetype: card.archetype ? card.archetype : 'Archetipo non disponibile',
           }));
         }).catch((error) => {
           console.log(error);
