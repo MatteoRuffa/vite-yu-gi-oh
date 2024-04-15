@@ -24,5 +24,7 @@ import CardComponent from './CardComponent.vue';
 
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
-
+    .col-12, .col-md-6, .col-lg-3 {
+        padding: 15px;
+    }
 </style>

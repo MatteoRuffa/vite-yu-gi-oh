@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="text-center">Total cards: {{  store && store.data ? store.data.length : 0 }}</h2>
+        <span><h2 class="">Total cards: {{  store && store.data ? store.data.length : 0 }}</h2></span>
     </div>
 </template>
 
@@ -17,5 +17,12 @@ import { store } from '../store.js';
 </script>
 
 <style lang="scss" scoped>
-
+@use '../assets/styles/partials/variables' as *;
+    h2 {
+        background-color: $darktext;
+        color: $lighttext;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px $darktext;
+        padding: 10px;
+    }
 </style>
