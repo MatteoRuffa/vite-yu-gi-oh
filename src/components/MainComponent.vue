@@ -1,6 +1,8 @@
 <template>
     <main>
-        <CardList />
+        <div class="container">
+            <CardList />PROVA
+        </div>
     </main>
 </template>
 
@@ -11,10 +13,22 @@ import CardList from './CardList.vue';
         name: 'MainComponent',
         components: {
             CardList,
+        },
+        data() {
+            return {
+                store
+            }
         }
     }
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/styles/partials/variables' as *;
+main {
+    background-color: $bg-primary;
+    .container {
+    background-color: $bg-light;
+    }
+}
 
 </style>

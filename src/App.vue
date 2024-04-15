@@ -16,14 +16,18 @@ import MainComponent from './components/MainComponent.vue';
     },
     data() {
       return {
-        store
+        store,
       }
     },
     methods: {
       getYuGiOhCards() {
-        axios.get(this.store.apiUrl + this.store.endPoint).then((res) => {
-          this.store = res.data.data;
-          console.log(res.data.data);
+        axios.get(this.store.apiUrl).then((res) => {
+          this.store.data = res.data.data.map(card => ({
+            id: card.id,
+            image: card.card_images[0].image_url,
+            name: card.name,
+            archetype: card.archetype
+          }));
         }).catch((error) => {
           console.log(error);
         }).finally(() => {
