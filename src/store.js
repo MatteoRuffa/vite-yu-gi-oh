@@ -5,5 +5,5 @@ export const store = reactive ({
     // endPoint: {
     //     cardInfo: 'cardinfo.php?num=20&offset=0/',
     // },
-    data: [],
+    //data: [],
 });
