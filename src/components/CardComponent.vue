@@ -30,15 +30,22 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         overflow: hidden;
         line-height: 1.2; 
         height: 2.4em; 
         font-size: 1.2rem;
+        font-weight: 500;
     }
     .card-title span {
         display: block;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+    .card-text {
+        display: flex;
+        justify-content: center;
+        font-weight: 400;
     }
 }
 </style>
