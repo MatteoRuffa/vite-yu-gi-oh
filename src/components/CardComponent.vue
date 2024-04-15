@@ -18,8 +18,11 @@
 
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
+.card {
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .card-body {
-    background: linear-gradient(to right, #D48F38, transparent);
+    // background: linear-gradient(to right, #D48F38, transparent);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 
