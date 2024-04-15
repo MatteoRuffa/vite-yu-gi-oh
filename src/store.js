@@ -6,4 +6,6 @@ export const store = reactive ({
     //     cardInfo: 'cardinfo.php?num=20&offset=0/',
     // },
     //data: [],
+    loading: false,
+    
 });

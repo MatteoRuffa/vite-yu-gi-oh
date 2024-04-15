@@ -21,6 +21,9 @@ import MainComponent from './components/MainComponent.vue';
     },
     methods: {
       getYuGiOhCards() {
+        this.store.loading = true;
+        const loadTime = 3000; 
+        const startTime = Date.now();
         axios.get(this.store.apiUrl).then((res) => {
           this.store.data = res.data.data.map(card => ({
             id: card.id,
@@ -31,7 +34,13 @@ import MainComponent from './components/MainComponent.vue';
         }).catch((error) => {
           console.log(error);
         }).finally(() => {
-          console.log('finally');
+          const endTime = Date.now();
+          const elapsedTime = endTime - startTime;
+          const remainingTime = Math.max(loadTime - elapsedTime, 0);
+          setTimeout(() => {
+            this.store.loading = false;
+            console.log('finally');
+          }, remainingTime);
         })
       }
     },
