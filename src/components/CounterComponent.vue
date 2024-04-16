@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span><h2 class="">Total cards: {{  cards.length }}</h2></span>
+        <span><h2 class="">Total cards: {{  cards ? cards.length : 'Caricamento...' }}</h2></span>
     </div>
 </template>
 

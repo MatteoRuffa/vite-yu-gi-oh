@@ -30,9 +30,16 @@ import MainComponent from './components/MainComponent.vue';
       },
       getYuGiOhArchetypes() {
         axios.get(this.store.apiUrl + this.store.endPoint.archetype).then((res) => {
-          this.store.archetype = res.data.slice(0, 10);
-          console.log(res.data.slice(0, 10));
-          // console.log(res.data.data);
+          const someTry = [];
+          while(someTry.length < 10) {
+            const randomIndex = Math.floor(Math.random() * res.data.length);
+            if(someTry.indexOf(randomIndex) === -1) someTry.push(randomIndex);
+          }
+
+          // Seleziona gli archetipi in base agli indici casuali
+          this.store.archetype = someTry.map(index => res.data[index]);
+
+          console.log(this.store.archetype);
         }).catch((error) => {
            console.log(error);
         }).finally(() => {
