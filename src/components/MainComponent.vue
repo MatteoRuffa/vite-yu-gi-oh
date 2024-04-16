@@ -9,6 +9,10 @@
                 <CounterComponent :cards="filteredCards"/>
             </div>
             <CardList />
+            <div>
+                <button type="button" class="btn btn-warning" @click="$emit('changePreviousPage')">Previous page</button>
+                <button type="button" class="btn btn-warning" @click="$emit('changeNextPage')">Next page</button>
+            </div>
         </div>
     </main>
 </template>

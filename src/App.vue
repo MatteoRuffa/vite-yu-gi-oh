@@ -1,10 +1,7 @@
 <template>
   <HeaderComponent />
-  <MainComponent @statusSearch="setParams"/>
-  <div>
-    <button type="button" class="btn btn-warning" @click="changePreviousPage">Previous page</button>
-    <button type="button" class="btn btn-warning" @click="changeNextPage">Next page</button>
-  </div>
+  <MainComponent @statusSearch="setParams" @changeNextPage="changeNextPage" @changePreviousPage="changePreviousPage"/>
+  
   
 </template>
 
@@ -53,7 +50,7 @@ import MainComponent from './components/MainComponent.vue';
       },
       getYuGiOhCards() {
         this.store.loading = true;
-        const loadTime = 3000; 
+        const loadTime = 2000; 
         const startTime = Date.now();
         axios.get(this.store.apiUrl + this.store.endPoint.cardInfo, this.store.options).then((res) => {
           this.store.data = res.data.data.map(card => ({
