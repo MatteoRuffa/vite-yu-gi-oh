@@ -1,6 +1,6 @@
 <template>
   <HeaderComponent />
-  <MainComponent />
+  <MainComponent @statusSearch="setParams"/>
 </template>
 
 <script>
@@ -17,9 +17,28 @@ import MainComponent from './components/MainComponent.vue';
     data() {
       return {
         store,
+        archetypeList: [],
       }
     },
     methods: {
+      setParams() {
+        if (this.store.statusFilter) {
+          this.store.options.params.archetype = this.store.statusFilter;
+        } else {
+          delete this.store.options.params.archetype;
+        } this.getYuGiOhCards();
+      },
+      getYuGiOhArchetypes() {
+        axios.get(this.store.apiUrl + this.store.endPoint.archetype).then((res) => {
+          this.store.archetype = res.data.slice(0, 10);
+          console.log(res.data.slice(0, 10));
+          // console.log(res.data.data);
+        }).catch((error) => {
+           console.log(error);
+        }).finally(() => {
+          // console.log('finally');
+        })
+      },
       getYuGiOhCards() {
         this.store.loading = true;
         const loadTime = 3000; 
@@ -39,13 +58,15 @@ import MainComponent from './components/MainComponent.vue';
           const remainingTime = Math.max(loadTime - elapsedTime, 0);
           setTimeout(() => {
             this.store.loading = false;
-            console.log('finally');
+            // console.log('finally');
           }, remainingTime);
         })
-      }
+      },
+      
     },
     created() {
       this.getYuGiOhCards();
+      this.getYuGiOhArchetypes();
     },
   }
 </script>

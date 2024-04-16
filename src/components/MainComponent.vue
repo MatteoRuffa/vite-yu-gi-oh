@@ -1,7 +1,13 @@
 <template>
     <main>
         <div class="container">
-            <CounterComponent />
+            <div>
+                <select name="" id="" @change="$emit('statusSearch')" v-model="store.statusFilter">
+                    <option value="">All</option>
+                    <option  :value="archetype.archetype_name" v-for="archetype in store.archetype" :key="archetype.archetype_name">{{ archetype.archetype_name}}</option>
+                </select>
+                <CounterComponent />
+            </div>
             <CardList />
         </div>
     </main>
@@ -37,7 +43,11 @@ main {
     background-color: $bg-light;
     border-radius: 5px;
     padding: 15px 30px;
-
+    div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     }
 }
 

@@ -1,6 +1,6 @@
 <template>
         <div class="row" v-if="!store.loading">
-            <div class="col-12 col-md-6 col-lg-3" v-for="card in store.data" :key="card.id">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3" v-for="card in store.data" :key="card.id">
                 <CardComponent :id="card.id" :image="card.image" :name="card.name" :archetype="card.archetype"/>
             </div>
         </div>
@@ -27,7 +27,7 @@ import CardComponent from './CardComponent.vue';
 
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
-    .col-12, .col-md-6, .col-lg-3 {
+    .col-12, .col-md-6, .col-lg-4 .col-xl-3 {
         padding: 15px;
     }
 </style>
