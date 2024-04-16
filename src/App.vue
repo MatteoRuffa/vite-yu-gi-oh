@@ -44,7 +44,7 @@ import MainComponent from './components/MainComponent.vue';
         const loadTime = 3000; 
         const startTime = Date.now();
         axios.get(this.store.apiUrl + this.store.endPoint.cardInfo, this.store.options).then((res) => {
-          this.store.cards = res.data.data.map(card => ({
+          this.store.data = res.data.data.map(card => ({
             id: card.id,
             image: card.card_images[0].image_url,
             name: card.name,

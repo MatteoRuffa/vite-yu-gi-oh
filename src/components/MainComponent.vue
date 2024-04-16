@@ -31,9 +31,9 @@ import CardList from './CardList.vue';
         computed: {
             filteredCards() {
                 if (this.store.statusFilter) {
-                    return this.store.cards.filter(card => card.archetype === this.store.statusFilter);
+                    return this.store.data.filter(card => card.archetype === this.store.statusFilter);
                 } else {
-                    return this.store.cards;
+                    return this.store.data;
                 }
             }
         },
