@@ -20,6 +20,10 @@
 @use '../assets/styles/partials/variables' as *;
 .card {
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform 0.3s ease;
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 .card-body {
     // background: linear-gradient(to right, #D48F38, transparent);
