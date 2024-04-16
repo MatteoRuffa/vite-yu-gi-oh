@@ -31,6 +31,13 @@ import MainComponent from './components/MainComponent.vue';
         } this.getYuGiOhCards();
       },
       getYuGiOhArchetypes() {
+        const params= {
+          num:20,
+          offset: this.store.options.params.offset,
+        };
+        if(this.store.statusFilter) {
+          params.archetype = this.store.statusFilter;
+        }
         axios.get(this.store.apiUrl + this.store.endPoint.archetype).then((res) => {
           const someTry = [];
           while(someTry.length < 10) {
@@ -73,13 +80,18 @@ import MainComponent from './components/MainComponent.vue';
       },
       changeNextPage() {
         this.store.options.params.offset += 20;
+        if (this.store.statusFilter) {
+          this.store.options.params.archetype = this.store.statusFilter;
+        }
         this.getYuGiOhCards();
       },
       changePreviousPage() {
         this.store.options.params.offset -= 20;
+        if (this.store.statusFilter) {
+          this.store.options.params.archetype = this.store.statusFilter;
+        }
         this.getYuGiOhCards();
-      }
-      
+      },
     },
     created() {
       this.getYuGiOhCards();
