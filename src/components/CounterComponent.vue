@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span><h2 class="">Total cards: {{  store && store.data ? store.data.length : 0 }}</h2></span>
+        <span><h2 class="">Total cards: {{  cards.length }}</h2></span>
     </div>
 </template>
 
@@ -8,11 +8,12 @@
 import { store } from '../store.js';
     export default {
         name: 'CounterComponent',
+        props: ['cards'],
         data() {
             return {
                 store,
             }
-        }
+        },
     }
 </script>
 

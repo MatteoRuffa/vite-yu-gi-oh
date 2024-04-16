@@ -14,6 +14,5 @@ export const store = reactive ({
     },
     cards: [],
     loading: false,
-    archetypeList: [],
     statusFilter: '',
 });

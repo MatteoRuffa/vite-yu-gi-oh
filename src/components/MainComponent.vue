@@ -6,7 +6,7 @@
                     <option value="">All</option>
                     <option  :value="archetype.archetype_name" v-for="archetype in store.archetype" :key="archetype.archetype_name">{{ archetype.archetype_name}}</option>
                 </select>
-                <CounterComponent />
+                <CounterComponent :cards="filteredCards"/>
             </div>
             <CardList />
         </div>
@@ -27,7 +27,16 @@ import CardList from './CardList.vue';
             return {
                 store
             }
-        }
+        },
+        computed: {
+            filteredCards() {
+                if (this.store.statusFilter) {
+                    return this.store.cards.filter(card => card.archetype === this.store.statusFilter);
+                } else {
+                    return this.store.cards;
+                }
+            }
+        },
     }
 </script>
 
