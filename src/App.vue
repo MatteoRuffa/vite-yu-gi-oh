@@ -1,6 +1,11 @@
 <template>
   <HeaderComponent />
   <MainComponent @statusSearch="setParams"/>
+  <div>
+    <button type="button" class="btn btn-warning" @click="changePreviousPage">Previous page</button>
+    <button type="button" class="btn btn-warning" @click="changeNextPage">Next page</button>
+  </div>
+  
 </template>
 
 <script>
@@ -69,6 +74,14 @@ import MainComponent from './components/MainComponent.vue';
           }, remainingTime);
         })
       },
+      changeNextPage() {
+        this.store.options.params.offset += 20;
+        this.getYuGiOhCards();
+      },
+      changePreviousPage() {
+        this.store.options.params.offset -= 20;
+        this.getYuGiOhCards();
+      }
       
     },
     created() {
@@ -79,5 +92,9 @@ import MainComponent from './components/MainComponent.vue';
 </script>
 
 <style lang="scss" scoped>
+div {
+  display: flex;
+  justify-content: space-between;
+}
 
 </style>
