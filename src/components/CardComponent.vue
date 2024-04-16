@@ -21,6 +21,7 @@
 .card {
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition: transform 0.3s ease;
+    cursor: pointer;
     &:hover {
         transform: scale(1.1);
     }

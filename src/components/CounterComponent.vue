@@ -18,6 +18,8 @@ import { store } from '../store.js';
 
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
+div {
+    padding: 10px;
     h2 {
         background-color: $darktext;
         color: $lighttext;
@@ -25,4 +27,5 @@ import { store } from '../store.js';
         box-shadow: 5px 5px 10px $darktext;
         padding: 10px;
     }
+}
 </style>
