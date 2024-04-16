@@ -53,9 +53,10 @@ main {
     padding: 30px;
     
     .container {
-    background-color: $bg-light;
-    border-radius: 5px;
-    padding: 15px 30px;
+            
+        background-color: $bg-light;
+        border-radius: 5px;
+        padding: 15px 30px;
     div{
         display: flex;
         justify-content: space-between;

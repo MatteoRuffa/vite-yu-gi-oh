@@ -44,10 +44,7 @@ import MainComponent from './components/MainComponent.vue';
             const randomIndex = Math.floor(Math.random() * res.data.length);
             if(someTry.indexOf(randomIndex) === -1) someTry.push(randomIndex);
           }
-
-          // Seleziona gli archetipi in base agli indici casuali
           this.store.archetype = someTry.map(index => res.data[index]);
-
           console.log(this.store.archetype);
         }).catch((error) => {
            console.log(error);
@@ -57,7 +54,7 @@ import MainComponent from './components/MainComponent.vue';
       },
       getYuGiOhCards() {
         this.store.loading = true;
-        const loadTime = 2000; 
+        const loadTime = 3000; 
         const startTime = Date.now();
         axios.get(this.store.apiUrl + this.store.endPoint.cardInfo, this.store.options).then((res) => {
           this.store.data = res.data.data.map(card => ({
